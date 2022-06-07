@@ -263,13 +263,14 @@ export default class Vector {
      */
     normalize(): Vector {
         // TODO: Normalize this vector and return it
-        let res = new Vector(0, 0, 0, 0);
-        res.x = this.x / this.length;
-        res.y = this.y / this.length;
-        res.z = this.z / this.length;
-        res.w = this.w / this.length;
+        let length = this.length;
 
-        return res;
+        this.x /= length;
+        this.y /= length;
+        this.z /= length;
+        this.w /= length;
+
+        return this;
     }
 
     /**
